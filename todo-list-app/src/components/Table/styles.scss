@@ -1,0 +1,131 @@
+@import "../../assets/styles/helper";
+
+.table {
+
+	&-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&>div:nth-child(1) {
+			display: flex;
+			align-items: center;
+		}
+
+		&>div:nth-child(2) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			&>div+div {
+				margin-left: 16px;
+			}
+		}
+
+		.search-field {
+			@media screen and (min-width: 992px) {}
+
+			@media screen and (max-width: 991px) and (min-width: 577px) {}
+
+			@media screen and (max-width: 576px) {
+				max-width: 120px;
+			}
+		}
+
+		.dropdown-box-value {
+			@media screen and (min-width: 992px) {}
+
+			@media screen and (max-width: 991px) and (min-width: 577px) {
+				min-width: 130px;
+			}
+
+			@media screen and (max-width: 576px) {
+				&+img {
+					display: none;
+				}
+			}
+		}
+
+		&-normal {
+			display: flex;
+			justify-content: start;
+			align-items: center;
+
+			&>img {
+				margin-left: 14px;
+			}
+		}
+
+		&-bulk {
+			display: flex;
+			align-items: center;
+			margin-left: 32px;
+		}
+
+		&-bulk-item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 40px;
+			height: 40px;
+			border: 1px solid #26282A;
+			border-radius: 2px;
+
+			img:nth-child(1) {}
+
+			img:nth-child(2) {
+				display: none;
+			}
+
+			&:hover {
+				img:nth-child(1) {
+					display: none;
+				}
+
+				img:nth-child(2) {
+					display: block;
+				}
+			}
+		}
+
+		&-bulk-item:nth-child(1) {
+			align-items: flex-start;
+
+			img {
+				margin-top: 7px;
+			}
+		}
+
+		&-bulk-item+&-bulk-item {
+			margin-left: 16px;
+		}
+	}
+
+	&-pagination {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		&-page {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-left: 20px;
+
+			&-item {
+				padding: 0 12px;
+				@include defaultFont(normal, normal, 12px, 18px);
+				color: #8B8B8B;
+				cursor: pointer;
+
+				&>img {}
+
+				&>button {}
+			}
+
+			&-selected {
+				color: #61CEF7;
+			}
+		}
+	}
+}

@@ -1,0 +1,114 @@
+/*==============================================
+  Base Styles
+==============================================*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	color: #FFFFFF;
+	font-size: 16px;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+a {
+	color: initial;
+
+	&:hover {
+		color: initial;
+		text-decoration: none;
+	}
+}
+
+button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 0;
+	background: initial;
+
+	&:focus,
+	&:hover {
+		outline: none;
+	}
+}
+
+img {
+	cursor: pointer;
+}
+
+.d-none {
+	display: none !important;
+}
+
+.d-hidden {
+	opacity: 0;
+}
+
+.d-block {
+	display: block !important;
+}
+
+.pr-24 {
+	padding-right: 24px;
+}
+
+.ml-16 {
+	margin-left: 16px;
+}
+
+.mr-16 {
+	margin-right: 16px;
+}
+
+.mt-16 {
+	margin-top: 16px;
+}
+
+.mt-24 {
+	margin-top: 24px;
+}
+
+.mt-37 {
+	margin-top: 37px;
+}
+
+.mt-48 {
+	margin-top: 48px;
+}
+
+.b-44 {
+	bottom: 44px;
+}
+
+.w-445 {
+	@media screen and (min-width: 768px) {
+		width: 445px;
+	}
+
+	@media screen and (max-width: 767px) {
+		width: 100%;
+	}
+}
+
+.no-scroll {
+	height: 100vh;
+	overflow-y: hidden;
+}
+
+.page-container {
+	position: relative;
+	background: #d3d3d3 no-repeat fixed;
+	max-width: 100%;
+	overflow-x: hidden;
+
+	@media screen and (min-width: 768px) {}
+
+	@media screen and (max-width: 767px) {}
+}

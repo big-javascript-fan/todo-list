@@ -1,0 +1,91 @@
+@import "../../assets/styles/helper";
+
+
+.app-header {
+	position: relative;
+	background: #1D1D1D no-repeat fixed;
+
+	&-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 auto;
+
+		@media screen and (min-width: 992px) {
+			max-width: 1440px;
+			padding: 32px 91px 14px;
+		}
+
+		@media screen and (max-width: 991px) and (min-width: 577px) {
+			padding: 32px 40px 14px;
+		}
+
+		@media screen and (max-width: 576px) {
+			padding: 32px 32px 14px;
+		}
+
+		&>img {
+			height: 30px;
+		}
+
+		&>&-right {
+			display: flex;
+			align-items: center;
+
+			@media screen and (min-width: 992px) {}
+
+			@media screen and (max-width: 991px) and (min-width: 577px) {
+				display: none;
+			}
+
+			@media screen and (max-width: 576px) {
+				display: none;
+			}
+		}
+
+		&-hamburger {
+			@media screen and (min-width: 992px) {
+				display: none;
+			}
+
+			@media screen and (max-width: 991px) and (min-width: 577px) {}
+
+			@media screen and (max-width: 576px) {}
+
+			&>img {
+				height: 20px;
+			}
+		}
+	}
+
+	&-item {
+		display: flex;
+		align-items: center;
+		@include defaultFont(normal, normal, 14px, 30px);
+		color: #FFFFFF;
+		background: transparent;
+		cursor: pointer;
+
+		&>a {
+			color: white;
+			text-decoration: none;
+		}
+
+		&>a.active {
+			color: #61CEF7;
+		}
+
+		img:nth-child(1) {
+			height: 14px;
+			margin-right: 10px;
+		}
+
+		img:nth-child(2) {
+			margin-left: 16px;
+		}
+	}
+
+	&-item+&-item {
+		margin-left: 48px;
+	}
+}

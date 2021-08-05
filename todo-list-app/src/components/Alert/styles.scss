@@ -1,0 +1,208 @@
+@import "../../assets/styles/helper";
+
+.alert {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7) no-repeat fixed;
+	z-index: 1;
+
+	&-container {
+		position: relative;
+
+		@media screen and (max-width: 767px) {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&-content {
+		position: relative;
+		display: inline-block;
+		background: #353738;
+		border-radius: 2px;
+
+		@media screen and (min-width: 768px) {
+			width: 716px;
+			max-width: 100%;
+			margin-top: 20vh;
+			padding: 48px 60px 60px 60px;
+		}
+		@media screen and (max-width: 767px) {
+			width: 100%;
+			height: 100%;
+			padding: 61px 32px 34px 32px;
+		}
+	}
+
+	&-title {
+		@media screen and (min-width: 768px) {
+			@include defaultFont(normal, bold, 44px, 62px);
+		}
+		@media screen and (max-width: 767px) {
+			@include defaultFont(normal, bold, 20px, 30px);
+		}
+	}
+
+	&-message {
+		@include defaultFont(normal, normal, 16px, 28px);
+		@media screen and (min-width: 768px) {
+			margin-top: 24px;
+		}
+		@media screen and (max-width: 767px) {
+			margin-top: 8px;
+		}
+	}
+
+	&-button {
+		@media screen and (min-width: 768px) {
+			display: flex;
+			align-items: center;
+			margin-top: 48px;
+		}
+		@media screen and (max-width: 767px) {
+			position: absolute;
+			bottom: 34px;
+			left: 32px;
+			right: 32px;
+		}
+
+		&-positive {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 60px;
+			background: #61CEF7;
+			border-radius: 2px;
+			@include defaultFont(normal, bold, 16px, 32px);
+			color: #26282A;
+
+			@media screen and (min-width: 768px) {
+				width: 220px;
+			}
+			@media screen and (max-width: 767px) {
+				width: 100%;
+			}
+
+			&:disabled {
+				background: #000000;
+				color: #828282;
+				cursor: not-allowed;
+			}
+		}
+
+		&-negative {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 60px;
+			background: transparent;
+			border: 1px solid #61CEF7;
+			border-radius: 2px;
+			@include defaultFont(normal, bold, 16px, 32px);
+			color: #61CEF7;
+			@media screen and (min-width: 768px) {
+				width: 220px;
+			}
+			@media screen and (max-width: 767px) {
+				width: 100%;
+			}
+
+			&:disabled {
+				background: #000000;
+				color: #828282;
+				cursor: not-allowed;
+			}
+		}
+
+		button + button {
+			@media screen and (min-width: 768px) {
+				margin-left: 16px;
+			}
+			@media screen and (max-width: 767px) {
+				margin-top: 16px;
+			}
+		}
+	}
+
+	&-close {
+		position: absolute;
+
+		@media screen and (min-width: 768px) {
+			top: 40px;
+			right: 40px;
+		}
+
+		@media screen and (max-width: 767px) {
+			top: 36px;
+			right: 32px;
+		}
+
+		& > img {
+			height: 20px;
+		}
+	}
+
+	&-input {
+		position: relative;
+		height: 40px;
+		border: 1px solid #8B8B8B;
+		border-radius: 2px;
+
+		@media screen and (min-width: 768px) {
+			display: flex;
+			align-items: center;
+			width: 60%;
+			margin-top: 24px;
+		}
+
+		@media screen and (max-width: 767px) {
+			display: block;
+			width: 100%;
+			margin-top: 16px;
+		}
+
+		&:focus-within {
+			border: 1px solid #61CEF7;
+		}
+
+		& > input, & > input:disabled {
+			width: 100%;
+			height: 100%;
+			padding: 8px 16px;
+			@include defaultFont(normal, normal, 16px, 24px);
+			color: #FFFFFF;
+			border: none;
+			background: transparent;
+
+			&::placeholder {
+				color: transparent;
+			}
+
+			&:placeholder-shown ~ .text-field-label {
+				position: absolute;
+				display: block;
+				cursor: text;
+				top: 12px;
+				font-size: 16px;
+				line-height: 32px;
+				transition: 0.2s;
+			}
+		}
+
+		& > input:focus {
+			border: transparent;
+			outline: none;
+		}
+	}
+
+	&-input + &-button {
+		@media screen and (min-width: 768px) {
+			margin-top: 24px;
+		}
+	}
+}

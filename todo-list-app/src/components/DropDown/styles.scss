@@ -1,0 +1,64 @@
+@import "../../assets/styles/helper";
+
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	min-width: 173px;
+	z-index: 100;
+
+	&-box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 8px 16px;
+		height: 40px;
+		border: 1px solid #26282A;
+		border-radius: 2px;
+		cursor: pointer;
+
+		&-value {
+			@include defaultFont(normal, normal, 14px, 24px);
+			color: #FFFFFF;
+		}
+
+		& > img {
+			width: 10px;
+		}
+	}
+
+	&-list {
+		position: absolute;
+		width: 100%;
+		border: 1px solid #26282A;
+		border-top: 0;
+		border-radius: 0 ;
+		background: #000000;
+
+		&-item {
+			display: flex;
+			align-items: center;
+			padding: 8px 16px;
+			@include defaultFont(normal, normal, 14px, 24px);
+			color: #FFFFFF;
+			cursor: pointer;
+
+			& > img:nth-child(1) {
+				height: 18px;
+			}
+
+			& > div:nth-child(2) {
+				display: inline;
+				margin-left: 12px;
+			}
+		}
+	}
+
+	.down {
+		top: 100%;
+	}
+
+	.up {
+		bottom: 100%;
+	}
+}

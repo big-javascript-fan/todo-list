@@ -1,0 +1,44 @@
+@import '../../../assets/styles/helper.scss';
+
+.h-menu-parent {
+	position: relative;
+	cursor: pointer;
+}
+
+.h-menu {
+	position: absolute;
+	padding: 19px 12px;
+	background: #000000;
+	z-index: 100;
+
+	&-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-width: 230px;
+		padding: 1px 12px;
+		@include defaultFont(normal, normal, 14px, 30px);
+		color: #FFFFFF;
+	}
+
+	&-item:hover {
+		background: #353738;
+		border-radius: 2px;
+	}
+
+	&-item & {
+		left: 100%;
+	}
+}
+
+.h-menu-parent>.h-menu {
+	position: absolute;
+	top: 100%;
+	left: 4px;
+}
+
+.h-menu-item.h-menu-parent>.h-menu {
+	position: absolute;
+	top: 0;
+	left: calc(100% + 12px);
+}
